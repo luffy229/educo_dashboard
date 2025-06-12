@@ -90,7 +90,7 @@ const CourseProgress = () => {
               <div className="flex items-center gap-2">
                 <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full overflow-hidden flex-shrink-0 group-hover/item:scale-110 transition-transform duration-300 ring-2 ring-transparent group-hover/item:ring-purple-200">
                   <img
-                    src={`https://images.unsplash.com/photo-150${index}1?w=24&h=24&fit=crop&crop=face`}
+                    src={"public/profilpic.jpg"}
                     alt={course.instructor}
                     className="w-full h-full object-cover"
                   />
