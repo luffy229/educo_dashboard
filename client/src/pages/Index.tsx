@@ -56,8 +56,8 @@ const Index = () => {
           <div className="lg:col-span-8 xl:col-span-8">
             {/* New Courses Section */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 sm:mb-6 gap-3 sm:gap-0">
-              <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900">New Courses</h2>
-              <button className="text-sm text-blue-600 hover:text-blue-700 font-medium self-start sm:self-auto">
+              <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 bg-clip-text text-transparent">New Courses</h2>
+              <button className="text-sm text-blue-600 hover:text-blue-700 font-medium self-start sm:self-auto hover:scale-105 transition-all duration-300 px-3 py-1 rounded-lg hover:bg-blue-50 hover:shadow-md">
                 View All
               </button>
             </div>
