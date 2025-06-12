@@ -151,3 +151,12 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .comic-text-stroke {
+    -webkit-text-stroke: 1.5px black; /* For outline */
+    text-stroke: 1.5px black;
+    color: red; /* Fill color */
+    text-shadow: 4px 4px 0px rgba(0,0,0,0.5); /* Shadow for depth */
+  }
+}

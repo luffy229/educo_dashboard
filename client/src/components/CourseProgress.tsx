@@ -22,7 +22,7 @@ const CourseProgress = () => {
   ];
 
   const CircularProgress = ({ progress }: { progress: number }) => {
-    const radius = 24;
+    const radius = 45;
     const strokeWidth = 6;
     const normalizedRadius = radius - strokeWidth * 2;
     const circumference = normalizedRadius * 2 * Math.PI;
