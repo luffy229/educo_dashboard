@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import Sidebar from '../components/Sidebar';
 import Header from '../components/Header';
 import CourseCard from '../components/CourseCard';
@@ -10,6 +10,7 @@ import Assignments from '../components/Assignments';
 import CourseProgress from '../components/CourseProgress';
 
 const Index = () => {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const newCourses = [
     {
       title: 'Content Writing',
@@ -42,30 +43,32 @@ const Index = () => {
 
   return (
     <div className="flex min-h-screen bg-gray-50">
-      <Sidebar />
+      <div className="hidden lg:block">
+        <Sidebar />
+      </div>
       
-      <div className="flex-1 p-8 bg-gray-50">
+      <div className="flex-1 p-4 sm:p-6 lg:p-8 bg-gray-50">
         <Header />
         
-        <div className="grid grid-cols-12 gap-6">
+        <div className="grid grid-cols-1 xl:grid-cols-12 gap-4 sm:gap-6">
           {/* Left Main Content */}
-          <div className="col-span-8">
+          <div className="xl:col-span-8">
             {/* New Courses Section */}
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold text-gray-900">New Courses</h2>
+            <div className="flex items-center justify-between mb-4 sm:mb-6">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900">New Courses</h2>
               <button className="text-sm text-blue-600 hover:text-blue-700 font-medium">
                 View All
               </button>
             </div>
             
-            <div className="grid grid-cols-3 gap-6 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
               {newCourses.map((course, index) => (
                 <CourseCard key={index} {...course} />
               ))}
             </div>
             
-            {/* Activity Chart and Daily Schedule side by side */}
-            <div className="grid grid-cols-2 gap-6 mb-6">
+            {/* Activity Chart and Daily Schedule */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mb-6">
               <div>
                 <ActivityChart />
               </div>
@@ -81,7 +84,7 @@ const Index = () => {
           </div>
           
           {/* Right Sidebar */}
-          <div className="col-span-4 space-y-6">
+          <div className="xl:col-span-4 space-y-4 sm:space-y-6">
             <Calendar />
             <Assignments />
           </div>

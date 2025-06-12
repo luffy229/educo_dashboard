@@ -15,53 +15,56 @@ const ActivityChart = () => {
   ];
 
   return (
-    <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-      <div className="flex items-center justify-between mb-6">
-        <h3 className="text-xl font-bold text-gray-900">Hours Activity</h3>
-        <div className="flex items-center gap-2 px-3 py-2 bg-gray-50 rounded-lg cursor-pointer">
-          <span className="text-sm text-gray-600">Weekly</span>
-          <ChevronDown size={16} className="text-gray-400" />
+    <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-gray-100">
+      <div className="flex items-center justify-between mb-4 sm:mb-6">
+        <h3 className="text-lg sm:text-xl font-bold text-gray-900">Hours Activity</h3>
+        <div className="flex items-center gap-2 px-2 sm:px-3 py-1 sm:py-2 bg-gray-50 rounded-lg cursor-pointer">
+          <span className="text-xs sm:text-sm text-gray-600">Weekly</span>
+          <ChevronDown size={14} className="text-gray-400 sm:w-4 sm:h-4" />
         </div>
       </div>
       
-      <div className="flex items-center gap-2 mb-6">
-        <TrendingUp size={16} className="text-green-500" />
-        <span className="text-green-500 font-semibold">+3%</span>
-        <span className="text-gray-500 text-sm">Increase than last week</span>
+      <div className="flex items-center gap-2 mb-4 sm:mb-6">
+        <TrendingUp size={14} className="text-green-500 sm:w-4 sm:h-4" />
+        <span className="text-green-500 font-semibold text-sm sm:text-base">+3%</span>
+        <span className="text-gray-500 text-xs sm:text-sm">Increase than last week</span>
       </div>
       
-      <div className="h-48 mb-4">
+      <div className="h-32 sm:h-40 lg:h-48 mb-3 sm:mb-4">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={data} barCategoryGap="20%">
             <XAxis 
               dataKey="day" 
               axisLine={false}
               tickLine={false}
-              tick={{ fontSize: 12, fill: '#9CA3AF' }}
+              tick={{ fontSize: 10, fill: '#9CA3AF' }}
+              className="sm:text-xs"
             />
             <YAxis 
               axisLine={false}
               tickLine={false}
-              tick={{ fontSize: 12, fill: '#9CA3AF' }}
+              tick={{ fontSize: 10, fill: '#9CA3AF' }}
               domain={[0, 8]}
               ticks={[0, 2, 4, 6, 8]}
               tickFormatter={(value) => `${value}h`}
+              className="sm:text-xs"
             />
             <Bar 
               dataKey="hours" 
               fill="#3B82F6" 
-              radius={[8, 8, 0, 0]}
-              maxBarSize={40}
+              radius={[6, 6, 0, 0]}
+              maxBarSize={30}
+              className="sm:max-w-10"
             />
           </BarChart>
         </ResponsiveContainer>
       </div>
       
       <div className="text-center">
-        <div className="inline-flex items-center gap-2 bg-gray-900 text-white px-4 py-2 rounded-xl text-sm font-medium">
-          <span className="w-2 h-2 bg-yellow-400 rounded-full"></span>
+        <div className="inline-flex items-center gap-2 bg-gray-900 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs sm:text-sm font-medium">
+          <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-yellow-400 rounded-full"></span>
           <span>6h 45 min</span>
-          <span className="text-gray-400">5 Jun 2023</span>
+          <span className="text-gray-400 hidden sm:inline">5 Jun 2023</span>
         </div>
       </div>
     </div>

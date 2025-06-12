@@ -15,16 +15,16 @@ const Calendar = () => {
   ];
 
   return (
-    <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-      <div className="flex items-center justify-between mb-6">
-        <ChevronLeft size={20} className="text-gray-400 cursor-pointer hover:text-gray-600" />
-        <h3 className="font-bold text-gray-900">August, 2023</h3>
-        <ChevronRight size={20} className="text-gray-400 cursor-pointer hover:text-gray-600" />
+    <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-gray-100">
+      <div className="flex items-center justify-between mb-4 sm:mb-6">
+        <ChevronLeft size={18} className="text-gray-400 cursor-pointer hover:text-gray-600 sm:w-5 sm:h-5" />
+        <h3 className="font-bold text-gray-900 text-sm sm:text-base">August, 2023</h3>
+        <ChevronRight size={18} className="text-gray-400 cursor-pointer hover:text-gray-600 sm:w-5 sm:h-5" />
       </div>
       
-      <div className="grid grid-cols-7 gap-1 mb-3">
+      <div className="grid grid-cols-7 gap-1 mb-2 sm:mb-3">
         {daysOfWeek.map((day, index) => (
-          <div key={index} className="text-center text-xs font-medium text-gray-500 py-2">
+          <div key={index} className="text-center text-xs font-medium text-gray-500 py-1 sm:py-2">
             {day}
           </div>
         ))}
@@ -34,7 +34,7 @@ const Calendar = () => {
         {calendarDays.map((day, index) => (
           <div
             key={index}
-            className={`text-center py-2 text-sm cursor-pointer rounded-lg transition-colors duration-200 ${
+            className={`text-center py-1.5 sm:py-2 text-xs sm:text-sm cursor-pointer rounded-lg transition-colors duration-200 ${
               day === today
                 ? 'bg-yellow-400 text-gray-900 font-bold'
                 : index < 4 && day > 20
