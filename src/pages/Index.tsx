@@ -1,11 +1,84 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React from 'react';
+import Sidebar from '../components/Sidebar';
+import Header from '../components/Header';
+import CourseCard from '../components/CourseCard';
+import ActivityChart from '../components/ActivityChart';
+import DailySchedule from '../components/DailySchedule';
+import Calendar from '../components/Calendar';
+import Assignments from '../components/Assignments';
+import CourseProgress from '../components/CourseProgress';
 
 const Index = () => {
+  const newCourses = [
+    {
+      title: 'Content Writing',
+      lessons: 12,
+      rating: 4.8,
+      type: 'Data Research',
+      bgColor: 'bg-orange-50',
+      iconBg: 'bg-orange-100',
+      icon: '📝'
+    },
+    {
+      title: 'Usability Testing',
+      lessons: 15,
+      rating: 5.0,
+      type: 'UI/UX Design',
+      bgColor: 'bg-green-50',
+      iconBg: 'bg-green-100',
+      icon: '🔍'
+    },
+    {
+      title: 'Photography',
+      lessons: 8,
+      rating: 4.6,
+      type: 'Art and Design',
+      bgColor: 'bg-blue-50',
+      iconBg: 'bg-blue-100',
+      icon: '📷'
+    }
+  ];
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="flex min-h-screen bg-slate-50">
+      <Sidebar />
+      
+      <div className="flex-1 p-6">
+        <Header />
+        
+        <div className="grid grid-cols-12 gap-6">
+          {/* New Courses Section */}
+          <div className="col-span-8">
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-xl font-semibold text-slate-800">New Courses</h2>
+              <button className="text-sm text-lime-600 hover:text-lime-700 font-medium">
+                View All
+              </button>
+            </div>
+            
+            <div className="grid grid-cols-3 gap-4 mb-8">
+              {newCourses.map((course, index) => (
+                <CourseCard key={index} {...course} />
+              ))}
+            </div>
+            
+            {/* Activity Chart */}
+            <ActivityChart />
+            
+            {/* Course Progress */}
+            <div className="mt-6">
+              <CourseProgress />
+            </div>
+          </div>
+          
+          {/* Right Sidebar */}
+          <div className="col-span-4 space-y-6">
+            <Calendar />
+            <DailySchedule />
+            <Assignments />
+          </div>
+        </div>
       </div>
     </div>
   );
