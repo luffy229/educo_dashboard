@@ -48,8 +48,9 @@ const Index = () => {
         <Header />
         
         <div className="grid grid-cols-12 gap-6">
-          {/* New Courses Section */}
+          {/* Left Main Content */}
           <div className="col-span-8">
+            {/* New Courses Section */}
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-xl font-semibold text-slate-800">New Courses</h2>
               <button className="text-sm text-lime-600 hover:text-lime-700 font-medium">
@@ -63,11 +64,18 @@ const Index = () => {
               ))}
             </div>
             
-            {/* Activity Chart */}
-            <ActivityChart />
+            {/* Activity Chart and Daily Schedule side by side */}
+            <div className="grid grid-cols-2 gap-6 mb-6">
+              <div>
+                <ActivityChart />
+              </div>
+              <div>
+                <DailySchedule />
+              </div>
+            </div>
             
             {/* Course Progress */}
-            <div className="mt-6">
+            <div>
               <CourseProgress />
             </div>
           </div>
@@ -75,7 +83,6 @@ const Index = () => {
           {/* Right Sidebar */}
           <div className="col-span-4 space-y-6">
             <Calendar />
-            <DailySchedule />
             <Assignments />
           </div>
         </div>
