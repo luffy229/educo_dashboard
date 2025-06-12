@@ -43,12 +43,13 @@ const Index = () => {
 
   return (
     <div className="flex min-h-screen bg-gray-50">
-      <div className="hidden lg:block">
-        <Sidebar />
-      </div>
+      <Sidebar 
+        isOpen={sidebarOpen} 
+        onClose={() => setSidebarOpen(false)} 
+      />
       
-      <div className="flex-1 p-4 sm:p-6 lg:p-8 bg-gray-50">
-        <Header />
+      <div className="flex-1 p-4 sm:p-6 lg:p-8 bg-gray-50 lg:ml-0">
+        <Header onMenuClick={() => setSidebarOpen(true)} />
         
         <div className="grid grid-cols-1 xl:grid-cols-12 gap-4 sm:gap-6">
           {/* Left Main Content */}

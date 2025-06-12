@@ -2,11 +2,18 @@
 import React from 'react';
 import { Search, Menu } from 'lucide-react';
 
-const Header = () => {
+interface HeaderProps {
+  onMenuClick?: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
   return (
     <div className="flex items-center justify-between mb-6 sm:mb-8">
       <div className="flex items-center gap-4">
-        <button className="lg:hidden p-2 rounded-lg bg-white shadow-sm">
+        <button 
+          onClick={onMenuClick}
+          className="lg:hidden p-2 rounded-lg bg-white shadow-sm"
+        >
           <Menu size={20} className="text-gray-600" />
         </button>
         <div>
