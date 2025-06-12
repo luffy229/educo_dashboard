@@ -11,7 +11,7 @@ const LoadingScreen: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold comic-text-stroke uppercase text-center"
         >
-          Welcome To Educa
+          Welcome To Educo
         </motion.div>
 
         <div className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-[360px] lg:max-w-[400px]">
