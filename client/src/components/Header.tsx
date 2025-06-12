@@ -40,7 +40,7 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
         <div className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 rounded-full overflow-hidden border-2 border-white shadow-md flex-shrink-0 hover:scale-110 hover:shadow-xl hover:border-blue-300 transition-all duration-300 cursor-pointer relative">
           <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-400/20 to-purple-400/20 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
           <img
-            src="public/profilpic.jpg"
+            src="/profilpic.jpg"
             alt="Profile"
             className="w-full h-full object-cover relative z-10"
           />
