@@ -29,7 +29,7 @@ const ActivityChart = () => {
         <span className="text-slate-500 text-sm">Increase than last week</span>
       </div>
       
-      <div className="h-32 mb-4">
+      <div className="h-40 mb-4">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={data}>
             <XAxis 
@@ -38,7 +38,14 @@ const ActivityChart = () => {
               tickLine={false}
               tick={{ fontSize: 12, fill: '#64748b' }}
             />
-            <YAxis hide />
+            <YAxis 
+              axisLine={false}
+              tickLine={false}
+              tick={{ fontSize: 12, fill: '#64748b' }}
+              domain={[0, 8]}
+              ticks={[0, 2, 4, 6, 8]}
+              tickFormatter={(value) => `${value}h`}
+            />
             <Bar 
               dataKey="hours" 
               fill="#84cc16" 
