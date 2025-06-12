@@ -17,8 +17,8 @@ const Index = () => {
       rating: 4.8,
       type: 'Data Research',
       bgColor: 'bg-orange-50',
-      iconBg: 'bg-orange-100',
-      icon: '📝'
+      iconBg: 'bg-orange-200',
+      icon: '✏️'
     },
     {
       title: 'Usability Testing',
@@ -26,7 +26,7 @@ const Index = () => {
       rating: 5.0,
       type: 'UI/UX Design',
       bgColor: 'bg-green-50',
-      iconBg: 'bg-green-100',
+      iconBg: 'bg-yellow-200',
       icon: '🔍'
     },
     {
@@ -35,16 +35,16 @@ const Index = () => {
       rating: 4.6,
       type: 'Art and Design',
       bgColor: 'bg-blue-50',
-      iconBg: 'bg-blue-100',
-      icon: '📷'
+      iconBg: 'bg-blue-200',
+      icon: '🔒'
     }
   ];
 
   return (
-    <div className="flex min-h-screen bg-white">
+    <div className="flex min-h-screen bg-gray-50">
       <Sidebar />
       
-      <div className="flex-1 p-6 bg-white">
+      <div className="flex-1 p-8 bg-gray-50">
         <Header />
         
         <div className="grid grid-cols-12 gap-6">
@@ -52,13 +52,13 @@ const Index = () => {
           <div className="col-span-8">
             {/* New Courses Section */}
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-xl font-semibold text-slate-800">New Courses</h2>
-              <button className="text-sm text-lime-600 hover:text-lime-700 font-medium">
+              <h2 className="text-2xl font-bold text-gray-900">New Courses</h2>
+              <button className="text-sm text-blue-600 hover:text-blue-700 font-medium">
                 View All
               </button>
             </div>
             
-            <div className="grid grid-cols-3 gap-4 mb-8">
+            <div className="grid grid-cols-3 gap-6 mb-8">
               {newCourses.map((course, index) => (
                 <CourseCard key={index} {...course} />
               ))}

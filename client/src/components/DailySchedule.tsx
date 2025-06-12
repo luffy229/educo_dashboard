@@ -8,49 +8,45 @@ const DailySchedule = () => {
       icon: '📱',
       title: 'Design System',
       subtitle: 'Lecture - Class',
-      bgColor: 'bg-blue-50',
-      iconBg: 'bg-blue-100'
+      iconBg: 'bg-orange-200'
     },
     {
-      icon: '💡',
+      icon: '🔤',
       title: 'Typography',
       subtitle: 'Group - Test',
-      bgColor: 'bg-purple-50',
-      iconBg: 'bg-purple-100'
+      iconBg: 'bg-blue-200'
     },
     {
       icon: '🎨',
       title: 'Color Style',
       subtitle: 'Group - Test',
-      bgColor: 'bg-lime-50',
-      iconBg: 'bg-lime-100'
+      iconBg: 'bg-green-200'
     },
     {
-      icon: '⚙️',
+      icon: '👁️',
       title: 'Visual Design',
       subtitle: 'Lecture - Test',
-      bgColor: 'bg-orange-50',
-      iconBg: 'bg-orange-100'
+      iconBg: 'bg-yellow-200'
     }
   ];
 
   return (
-    <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-100 h-80">
-      <h3 className="text-lg font-semibold text-slate-800 mb-4">Daily Schedule</h3>
+    <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+      <h3 className="text-xl font-bold text-gray-900 mb-6">Daily Schedule</h3>
       
-      <div className="space-y-3 h-60">
+      <div className="space-y-4">
         {scheduleItems.map((item, index) => (
-          <div key={index} className={`${item.bgColor} rounded-lg p-3 flex items-center justify-between cursor-pointer hover:scale-105 transition-transform duration-200`}>
+          <div key={index} className="flex items-center justify-between p-3 hover:bg-gray-50 rounded-xl cursor-pointer transition-colors">
             <div className="flex items-center gap-3">
-              <div className={`w-8 h-8 ${item.iconBg} rounded-lg flex items-center justify-center`}>
-                <span className="text-sm">{item.icon}</span>
+              <div className={`w-10 h-10 ${item.iconBg} rounded-xl flex items-center justify-center`}>
+                <span className="text-lg">{item.icon}</span>
               </div>
               <div>
-                <h4 className="font-medium text-slate-800 text-sm">{item.title}</h4>
-                <p className="text-xs text-slate-500">{item.subtitle}</p>
+                <h4 className="font-semibold text-gray-900 text-sm">{item.title}</h4>
+                <p className="text-xs text-gray-500">{item.subtitle}</p>
               </div>
             </div>
-            <ChevronRight size={16} className="text-slate-400" />
+            <ChevronRight size={20} className="text-gray-400" />
           </div>
         ))}
       </div>
