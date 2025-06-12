@@ -30,31 +30,31 @@ const ActivityChart = () => {
         <span className="text-gray-500 text-xs sm:text-sm">Increase than last week</span>
       </div>
       
-      <div className="h-32 sm:h-40 lg:h-48 mb-3 sm:mb-4">
+      <div className="h-28 sm:h-32 md:h-40 lg:h-48 mb-3 sm:mb-4">
         <ResponsiveContainer width="100%" height="100%">
-          <BarChart data={data} barCategoryGap="20%">
+          <BarChart data={data} barCategoryGap="15%" margin={{ top: 5, right: 5, left: 5, bottom: 5 }}>
             <XAxis 
               dataKey="day" 
               axisLine={false}
               tickLine={false}
-              tick={{ fontSize: 10, fill: '#9CA3AF' }}
+              tick={{ fontSize: 9, fill: '#9CA3AF' }}
               className="sm:text-xs"
             />
             <YAxis 
               axisLine={false}
               tickLine={false}
-              tick={{ fontSize: 10, fill: '#9CA3AF' }}
+              tick={{ fontSize: 9, fill: '#9CA3AF' }}
               domain={[0, 8]}
               ticks={[0, 2, 4, 6, 8]}
               tickFormatter={(value) => `${value}h`}
               className="sm:text-xs"
+              width={20}
             />
             <Bar 
               dataKey="hours" 
               fill="#3B82F6" 
-              radius={[6, 6, 0, 0]}
-              maxBarSize={30}
-              className="sm:max-w-10"
+              radius={[4, 4, 0, 0]}
+              maxBarSize={25}
             />
           </BarChart>
         </ResponsiveContainer>

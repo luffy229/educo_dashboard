@@ -48,32 +48,32 @@ const Index = () => {
         onClose={() => setSidebarOpen(false)} 
       />
       
-      <div className="flex-1 p-4 sm:p-6 lg:p-8 bg-gray-50 lg:ml-0">
+      <div className="flex-1 p-3 sm:p-4 md:p-6 lg:p-8 bg-gray-50 transition-all duration-300">
         <Header onMenuClick={() => setSidebarOpen(true)} />
         
-        <div className="grid grid-cols-1 xl:grid-cols-12 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 xl:grid-cols-12 gap-3 sm:gap-4 md:gap-6">
           {/* Left Main Content */}
-          <div className="xl:col-span-8">
+          <div className="lg:col-span-8 xl:col-span-8">
             {/* New Courses Section */}
-            <div className="flex items-center justify-between mb-4 sm:mb-6">
-              <h2 className="text-xl sm:text-2xl font-bold text-gray-900">New Courses</h2>
-              <button className="text-sm text-blue-600 hover:text-blue-700 font-medium">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 sm:mb-6 gap-3 sm:gap-0">
+              <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900">New Courses</h2>
+              <button className="text-sm text-blue-600 hover:text-blue-700 font-medium self-start sm:self-auto">
                 View All
               </button>
             </div>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-4 md:gap-6 mb-6 sm:mb-8">
               {newCourses.map((course, index) => (
                 <CourseCard key={index} {...course} />
               ))}
             </div>
             
             {/* Activity Chart and Daily Schedule */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mb-6">
-              <div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 md:gap-6 mb-6">
+              <div className="order-2 md:order-1">
                 <ActivityChart />
               </div>
-              <div>
+              <div className="order-1 md:order-2">
                 <DailySchedule />
               </div>
             </div>
@@ -85,7 +85,7 @@ const Index = () => {
           </div>
           
           {/* Right Sidebar */}
-          <div className="xl:col-span-4 space-y-4 sm:space-y-6">
+          <div className="lg:col-span-4 xl:col-span-4 space-y-3 sm:space-y-4 md:space-y-6">
             <Calendar />
             <Assignments />
           </div>

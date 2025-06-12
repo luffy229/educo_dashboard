@@ -41,8 +41,8 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen = true, onClose }) => {
       
       {/* Sidebar */}
       <div className={`
-        fixed lg:static inset-y-0 left-0 z-50 w-[280px] lg:w-[205px] 
-        bg-slate-800 text-white min-h-screen p-4 lg:p-6 
+        fixed lg:static inset-y-0 left-0 z-50 w-[260px] sm:w-[280px] lg:w-[205px] 
+        bg-slate-800 text-white min-h-screen p-3 sm:p-4 lg:p-6 
         transform transition-transform duration-300 ease-in-out
         ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
       `}>
@@ -55,11 +55,11 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen = true, onClose }) => {
         </button>
 
         {/* Logo */}
-        <div className="flex items-center gap-2 mb-8 lg:mb-10">
-          <div className="w-8 h-8 bg-gradient-to-br from-blue-400 to-purple-500 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-sm">📚</span>
+        <div className="flex items-center gap-2 mb-6 sm:mb-8 lg:mb-10">
+          <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-br from-blue-400 to-purple-500 rounded-lg flex items-center justify-center">
+            <span className="text-white font-bold text-xs sm:text-sm">📚</span>
           </div>
-          <span className="text-lg font-semibold text-white">EDUCO</span>
+          <span className="text-base sm:text-lg font-semibold text-white">EDUCO</span>
         </div>
 
         {/* Menu Items */}
@@ -69,7 +69,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen = true, onClose }) => {
             return (
               <div
                 key={index}
-                className={`flex items-center gap-3 px-4 py-3 rounded-xl cursor-pointer transition-all duration-200 ${
+                className={`flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl cursor-pointer transition-all duration-200 ${
                   item.active
                     ? 'bg-lime-400 text-slate-900 font-medium shadow-lg'
                     : 'hover:bg-slate-700 text-slate-300 hover:text-white'
@@ -81,10 +81,10 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen = true, onClose }) => {
                   }
                 }}
               >
-                <Icon size={18} />
-                <span className="flex-1 text-sm">{item.label}</span>
+                <Icon size={16} className="sm:w-4.5 sm:h-4.5" />
+                <span className="flex-1 text-xs sm:text-sm">{item.label}</span>
                 {item.badge && (
-                  <span className="bg-red-500 text-white text-xs px-2 py-0.5 rounded-full min-w-[20px] text-center">
+                  <span className="bg-red-500 text-white text-xs px-1.5 sm:px-2 py-0.5 rounded-full min-w-[18px] sm:min-w-[20px] text-center">
                     {item.badge}
                   </span>
                 )}
