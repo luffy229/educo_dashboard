@@ -4,6 +4,29 @@
 
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
 
+/* Custom responsive utilities */
+@layer utilities {
+  .text-responsive {
+    @apply text-sm sm:text-base md:text-lg;
+  }
+  
+  .heading-responsive {
+    @apply text-lg sm:text-xl md:text-2xl lg:text-3xl;
+  }
+  
+  .container-responsive {
+    @apply px-3 sm:px-4 md:px-6 lg:px-8;
+  }
+  
+  .gap-responsive {
+    @apply gap-2 sm:gap-3 md:gap-4 lg:gap-6;
+  }
+  
+  .rounded-responsive {
+    @apply rounded-lg sm:rounded-xl md:rounded-2xl;
+  }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
