@@ -35,22 +35,22 @@ const DailySchedule = () => {
   ];
 
   return (
-    <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-100">
-      <h3 className="text-lg font-semibold text-slate-800 mb-6">Daily Schedule</h3>
+    <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-100 h-80">
+      <h3 className="text-lg font-semibold text-slate-800 mb-4">Daily Schedule</h3>
       
-      <div className="space-y-4">
+      <div className="space-y-3 overflow-y-auto h-60">
         {scheduleItems.map((item, index) => (
-          <div key={index} className={`${item.bgColor} rounded-lg p-4 flex items-center justify-between cursor-pointer hover:scale-105 transition-transform duration-200`}>
+          <div key={index} className={`${item.bgColor} rounded-lg p-3 flex items-center justify-between cursor-pointer hover:scale-105 transition-transform duration-200`}>
             <div className="flex items-center gap-3">
-              <div className={`w-10 h-10 ${item.iconBg} rounded-lg flex items-center justify-center`}>
-                <span className="text-lg">{item.icon}</span>
+              <div className={`w-8 h-8 ${item.iconBg} rounded-lg flex items-center justify-center`}>
+                <span className="text-sm">{item.icon}</span>
               </div>
               <div>
-                <h4 className="font-medium text-slate-800">{item.title}</h4>
-                <p className="text-sm text-slate-500">{item.subtitle}</p>
+                <h4 className="font-medium text-slate-800 text-sm">{item.title}</h4>
+                <p className="text-xs text-slate-500">{item.subtitle}</p>
               </div>
             </div>
-            <ChevronRight size={20} className="text-slate-400" />
+            <ChevronRight size={16} className="text-slate-400" />
           </div>
         ))}
       </div>
