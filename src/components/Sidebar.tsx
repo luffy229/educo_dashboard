@@ -24,13 +24,13 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="w-64 bg-slate-800 text-white min-h-screen p-4">
+    <div className="w-64 bg-slate-900 text-white min-h-screen p-4">
       {/* Logo */}
       <div className="flex items-center gap-3 mb-8 px-2">
         <div className="w-8 h-8 bg-lime-400 rounded-lg flex items-center justify-center">
           <span className="text-slate-800 font-bold text-sm">E</span>
         </div>
-        <span className="text-xl font-semibold tracking-wider">EDUCO</span>
+        <span className="text-xl font-semibold tracking-wider text-white">EDUCO</span>
       </div>
 
       {/* Menu Items */}
@@ -42,8 +42,8 @@ const Sidebar = () => {
               key={index}
               className={`flex items-center gap-3 px-4 py-3 rounded-lg cursor-pointer transition-all duration-200 ${
                 item.active
-                  ? 'bg-lime-400 text-slate-800 font-medium'
-                  : 'hover:bg-slate-700 text-slate-300'
+                  ? 'bg-lime-400 text-slate-900 font-medium'
+                  : 'hover:bg-slate-800 text-slate-300 hover:text-white'
               }`}
             >
               <Icon size={20} />

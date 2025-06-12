@@ -41,10 +41,10 @@ const Index = () => {
   ];
 
   return (
-    <div className="flex min-h-screen bg-slate-50">
+    <div className="flex min-h-screen bg-white">
       <Sidebar />
       
-      <div className="flex-1 p-6">
+      <div className="flex-1 p-6 bg-white">
         <Header />
         
         <div className="grid grid-cols-12 gap-6">
